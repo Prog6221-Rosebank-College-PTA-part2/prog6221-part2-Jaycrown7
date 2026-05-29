@@ -72,6 +72,33 @@ namespace BOTGUI
             {
                 rtbChat.AppendText("Bot: Hello! Welcome to the Cybersecurity Awareness Bot.\n\n");
             }
+            else if (input.Contains("tell me more") || input.Contains("another tip"))
+            {
+                if (currentTopic == "password")
+                {
+                    int index = random.Next(passwordResponses.Length);
+                    rtbChat.AppendText("Bot: " + passwordResponses[index] + "\n\n");
+                }
+                else if (currentTopic == "phishing")
+                {
+                    int index = random.Next(phishingResponses.Length);
+                    rtbChat.AppendText("Bot: " + phishingResponses[index] + "\n\n");
+                }
+                else if (currentTopic == "privacy")
+                {
+                    int index = random.Next(privacyResponses.Length);
+                    rtbChat.AppendText("Bot: " + privacyResponses[index] + "\n\n");
+                }
+                else if (currentTopic == "scam")
+                {
+                    int index = random.Next(scamResponses.Length);
+                    rtbChat.AppendText("Bot: " + scamResponses[index] + "\n\n");
+                }
+                else
+                {
+                    rtbChat.AppendText("Bot: Please mention a cybersecurity topic first.\n\n");
+                }
+            }
             else if (input.Contains("password"))
             {
                 currentTopic = "password";
