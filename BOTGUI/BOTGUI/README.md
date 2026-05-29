@@ -27,7 +27,7 @@ GUI Interface
  Voice Greeting
 
 * Plays a WAV greeting audio when the application starts
-* Implemented using the `SoundPlayer` class from `System.Media`
+* Implemented using the SoundPlayer class from System.Media
 
  Keyword Recognition
 
@@ -40,7 +40,7 @@ The chatbot recognises cybersecurity keywords such as:
 
  Random Responses
 
-* Uses arrays and the `Random` class
+* Uses arrays and the Random class
 * Provides different responses for the same topic to make conversations more interactive
 
  Memory and Recall
