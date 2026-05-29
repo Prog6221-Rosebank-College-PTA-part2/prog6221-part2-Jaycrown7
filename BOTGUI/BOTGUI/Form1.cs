@@ -7,6 +7,7 @@ namespace BOTGUI
     {
         Random random = new Random();
 
+        string favoriteTopic = "";
         string currentTopic = "";
 
         string[] passwordResponses =
@@ -72,6 +73,27 @@ namespace BOTGUI
             {
                 rtbChat.AppendText("Bot: Hello! Welcome to the Cybersecurity Awareness Bot.\n\n");
             }
+            else if (input.Contains("i like"))
+            {
+                if (input.Contains("privacy"))
+                {
+                    favoriteTopic = "privacy";
+                }
+                else if (input.Contains("password"))
+                {
+                    favoriteTopic = "passwords";
+                }
+                else if (input.Contains("phishing"))
+                {
+                    favoriteTopic = "phishing";
+                }
+                else if (input.Contains("scam"))
+                {
+                    favoriteTopic = "scams";
+                }
+
+                rtbChat.AppendText("Bot: Great! I will remember that you are interested in " + favoriteTopic + ".\n\n");
+            }
             else if (input.Contains("tell me more") || input.Contains("another tip"))
             {
                 if (currentTopic == "password")
@@ -103,25 +125,53 @@ namespace BOTGUI
             {
                 currentTopic = "password";
                 int index = random.Next(passwordResponses.Length);
-                rtbChat.AppendText("Bot: " + passwordResponses[index] + "\n\n");
+                rtbChat.AppendText("Bot: " + passwordResponses[index] + "\n");
+
+                if (favoriteTopic == "passwords")
+                {
+                    rtbChat.AppendText("Bot: Since passwords are your favorite topic, remember to never reuse passwords across accounts.\n");
+                }
+
+                rtbChat.AppendText("\n");
             }
             else if (input.Contains("phishing"))
             {
                 currentTopic = "phishing";
                 int index = random.Next(phishingResponses.Length);
-                rtbChat.AppendText("Bot: " + phishingResponses[index] + "\n\n");
+                rtbChat.AppendText("Bot: " + phishingResponses[index] + "\n");
+
+                if (favoriteTopic == "phishing")
+                {
+                    rtbChat.AppendText("Bot: Since phishing is your favorite topic, always double-check suspicious email addresses.\n");
+                }
+
+                rtbChat.AppendText("\n");
             }
             else if (input.Contains("privacy"))
             {
                 currentTopic = "privacy";
                 int index = random.Next(privacyResponses.Length);
-                rtbChat.AppendText("Bot: " + privacyResponses[index] + "\n\n");
+                rtbChat.AppendText("Bot: " + privacyResponses[index] + "\n");
+
+                if (favoriteTopic == "privacy")
+                {
+                    rtbChat.AppendText("Bot: Since privacy is your favorite topic, remember to enable two-factor authentication.\n");
+                }
+
+                rtbChat.AppendText("\n");
             }
             else if (input.Contains("scam"))
             {
                 currentTopic = "scam";
                 int index = random.Next(scamResponses.Length);
-                rtbChat.AppendText("Bot: " + scamResponses[index] + "\n\n");
+                rtbChat.AppendText("Bot: " + scamResponses[index] + "\n");
+
+                if (favoriteTopic == "scams")
+                {
+                    rtbChat.AppendText("Bot: Since scams are your favorite topic, avoid sharing banking details online.\n");
+                }
+
+                rtbChat.AppendText("\n");
             }
             else if (input == "exit")
             {
