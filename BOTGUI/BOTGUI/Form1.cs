@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Media;
 using System.Windows.Forms;
 
 namespace BOTGUI
@@ -41,6 +43,7 @@ namespace BOTGUI
         public Form1()
         {
             InitializeComponent();
+            PlayGreeting();
 
             rtbChat.AppendText("========================================\n");
 
@@ -55,6 +58,27 @@ namespace BOTGUI
 
             rtbChat.AppendText("Bot: Welcome to the Cybersecurity Awareness Bot!\n");
             rtbChat.AppendText("Bot: Ask me anything about cybersecurity.\n\n");
+
+
+
+        }
+
+        private void PlayGreeting()
+        {
+            try
+            {
+                SoundPlayer player = new SoundPlayer(@"assets\greeting.wav");
+                player.PlaySync();
+            }
+            catch
+            {
+                MessageBox.Show("Greeting audio could not play.");
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -75,37 +99,42 @@ namespace BOTGUI
                 rtbChat.AppendText("Bot: Hello! Welcome to the Cybersecurity Awareness Bot.\n\n");
             }
 
-            // Sentiment detection
+            // Sentiment Detection
             else if (input.Contains("worried"))
             {
                 rtbChat.AppendText("Bot: It is understandable to feel worried about cybersecurity.\n");
                 rtbChat.AppendText("Bot: Scammers can be convincing, but staying informed helps you stay safe.\n\n");
             }
+
             else if (input.Contains("frustrated"))
             {
                 rtbChat.AppendText("Bot: Cybersecurity can sometimes feel overwhelming.\n");
                 rtbChat.AppendText("Bot: Take things step by step and continue learning.\n\n");
             }
+
             else if (input.Contains("curious"))
             {
                 rtbChat.AppendText("Bot: Curiosity is a great way to improve your cybersecurity knowledge.\n\n");
             }
 
-            // Memory feature
+            // Memory Feature
             else if (input.Contains("i like"))
             {
                 if (input.Contains("privacy"))
                 {
                     favoriteTopic = "privacy";
                 }
+
                 else if (input.Contains("password"))
                 {
                     favoriteTopic = "passwords";
                 }
+
                 else if (input.Contains("phishing"))
                 {
                     favoriteTopic = "phishing";
                 }
+
                 else if (input.Contains("scam"))
                 {
                     favoriteTopic = "scams";
@@ -114,7 +143,7 @@ namespace BOTGUI
                 rtbChat.AppendText("Bot: Great! I will remember that you are interested in " + favoriteTopic + ".\n\n");
             }
 
-            // Follow-up conversation
+            // Follow-up Conversation
             else if (input.Contains("tell me more") || input.Contains("another tip"))
             {
                 if (currentTopic == "password")
@@ -122,21 +151,25 @@ namespace BOTGUI
                     int index = random.Next(passwordResponses.Length);
                     rtbChat.AppendText("Bot: " + passwordResponses[index] + "\n\n");
                 }
+
                 else if (currentTopic == "phishing")
                 {
                     int index = random.Next(phishingResponses.Length);
                     rtbChat.AppendText("Bot: " + phishingResponses[index] + "\n\n");
                 }
+
                 else if (currentTopic == "privacy")
                 {
                     int index = random.Next(privacyResponses.Length);
                     rtbChat.AppendText("Bot: " + privacyResponses[index] + "\n\n");
                 }
+
                 else if (currentTopic == "scam")
                 {
                     int index = random.Next(scamResponses.Length);
                     rtbChat.AppendText("Bot: " + scamResponses[index] + "\n\n");
                 }
+
                 else
                 {
                     rtbChat.AppendText("Bot: Please mention a cybersecurity topic first.\n\n");
@@ -147,7 +180,9 @@ namespace BOTGUI
             else if (input.Contains("password"))
             {
                 currentTopic = "password";
+
                 int index = random.Next(passwordResponses.Length);
+
                 rtbChat.AppendText("Bot: " + passwordResponses[index] + "\n");
 
                 if (favoriteTopic == "passwords")
@@ -162,7 +197,9 @@ namespace BOTGUI
             else if (input.Contains("phishing"))
             {
                 currentTopic = "phishing";
+
                 int index = random.Next(phishingResponses.Length);
+
                 rtbChat.AppendText("Bot: " + phishingResponses[index] + "\n");
 
                 if (favoriteTopic == "phishing")
@@ -177,7 +214,9 @@ namespace BOTGUI
             else if (input.Contains("privacy"))
             {
                 currentTopic = "privacy";
+
                 int index = random.Next(privacyResponses.Length);
+
                 rtbChat.AppendText("Bot: " + privacyResponses[index] + "\n");
 
                 if (favoriteTopic == "privacy")
@@ -192,7 +231,9 @@ namespace BOTGUI
             else if (input.Contains("scam"))
             {
                 currentTopic = "scam";
+
                 int index = random.Next(scamResponses.Length);
+
                 rtbChat.AppendText("Bot: " + scamResponses[index] + "\n");
 
                 if (favoriteTopic == "scams")
@@ -215,7 +256,7 @@ namespace BOTGUI
                 Application.Exit();
             }
 
-            // Unknown input
+            // Unknown Input
             else
             {
                 rtbChat.AppendText("Bot: I am not sure I understand. Try rephrasing.\n\n");
@@ -228,5 +269,7 @@ namespace BOTGUI
         {
 
         }
+
+
     }
 }
