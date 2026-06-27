@@ -1,4 +1,5 @@
-﻿using BOTGUI.Services;
+﻿using BOTGUI.Models;
+using BOTGUI.Services;
 using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,8 @@ namespace BOTGUI
     public partial class Form1 : Form
     {
         Random random = new Random();
-        
+        TaskManager taskManager = new TaskManager();
+
         string favoriteTopic = "";
         string currentTopic = "";
 
@@ -286,6 +288,107 @@ namespace BOTGUI
 
         }
 
+        private void btnAddTask_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txtTaskTitle.Text))
+            {
+                MessageBox.Show("Please enter a task title.");
+                return;
+            }
 
+            TaskItem task = new TaskItem();
+
+            task.Title = txtTaskTitle.Text;
+            task.Description = txtTaskDescription.Text;
+            task.ReminderDate = dtpReminder.Value;
+            task.Status = "Pending";
+
+            taskManager.AddTask(task);
+
+            MessageBox.Show("Task added successfully!");
+
+            rtbChat.AppendText("Bot: Your task has been added successfully.\n\n");
+
+            txtTaskTitle.Clear();
+            txtTaskDescription.Clear();
+        }
+
+        private void rtbChat_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void rtbChat_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnViewTask_Click(object sender, EventArgs e)
+        {
+            
+            List<TaskItem> tasks = taskManager.GetTasks();
+
+            rtbChat.AppendText("========== TASK LIST ==========\n");
+
+            if (tasks.Count == 0)
+            {
+                rtbChat.AppendText("No tasks found.\n\n");
+                return;
+            }
+
+            foreach (TaskItem task in tasks)
+            {
+                rtbChat.AppendText(
+                    "ID: " + task.TaskID +
+                    "\nTitle: " + task.Title +
+                    "\nDescription: " + task.Description +
+                    "\nReminder: " + task.ReminderDate +
+                    "\nStatus: " + task.Status +
+                    "\n---------------------------\n");
+            }
+
+            rtbChat.AppendText("\n");
+        }
+
+        private void btnDeleteTask_Click(object sender, EventArgs e)
+        {
+
+            if (int.TryParse(txtTaskID.Text, out int taskID))
+            {
+                taskManager.DeleteTask(taskID);
+
+                MessageBox.Show("Task deleted successfully.");
+
+                rtbChat.AppendText("Bot: Task deleted successfully.\n\n");
+
+                txtTaskID.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Task ID.");
+            }
+        }
+
+        private void btnCompleteTask_Click(object sender, EventArgs e)
+        {
+            if (int.TryParse(txtTaskID.Text, out int taskID))
+            {
+                taskManager.CompleteTask(taskID);
+
+                MessageBox.Show("Task marked as completed.");
+
+                rtbChat.AppendText("Bot: Task marked as completed.\n\n");
+
+                txtTaskID.Clear();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid Task ID.");
+            }
+
+        }
+    
+    
     }
+    
 }

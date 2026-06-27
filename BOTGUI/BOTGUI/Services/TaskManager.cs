@@ -9,7 +9,7 @@ namespace BOTGUI.Services
         Database db = new Database();
 
         public void AddTask(TaskItem task)
-        { 
+        {  
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();
@@ -63,5 +63,39 @@ namespace BOTGUI.Services
 
             return tasks;
         }
+
+        public void DeleteTask(int taskID)
+        {
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+
+                string query = "DELETE FROM Tasks WHERE TaskID=@id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", taskID);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+        public void CompleteTask(int taskID)
+        {
+            using (MySqlConnection conn = db.GetConnection())
+            {
+                conn.Open();
+
+                string query = "UPDATE Tasks SET Status='Completed' WHERE TaskID=@id";
+
+                MySqlCommand cmd = new MySqlCommand(query, conn);
+
+                cmd.Parameters.AddWithValue("@id", taskID);
+
+                cmd.ExecuteNonQuery();
+            }
+        }
+
+
     }
 }

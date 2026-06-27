@@ -31,10 +31,12 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.txtUserInput = new System.Windows.Forms.TextBox();
             this.btnSend = new System.Windows.Forms.Button();
-            this.rtbChat = new System.Windows.Forms.GroupBox();
+            this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.rtbChat = new System.Windows.Forms.RichTextBox();
             this.grpQuiz = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.grpLog = new System.Windows.Forms.GroupBox();
+            this.rtbActivityLog = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTaskTitle = new System.Windows.Forms.TextBox();
             this.grpTasks = new System.Windows.Forms.GroupBox();
@@ -44,9 +46,11 @@
             this.btnAddTask = new System.Windows.Forms.Button();
             this.dtpReminder = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTaskDescription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.rtbActivityLog = new System.Windows.Forms.RichTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtTaskID = new System.Windows.Forms.TextBox();
+            this.GroupBox1.SuspendLayout();
             this.grpQuiz.SuspendLayout();
             this.grpLog.SuspendLayout();
             this.grpTasks.SuspendLayout();
@@ -84,14 +88,25 @@
             this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
+            // GroupBox1
+            // 
+            this.GroupBox1.Controls.Add(this.rtbChat);
+            this.GroupBox1.Location = new System.Drawing.Point(12, 27);
+            this.GroupBox1.Name = "GroupBox1";
+            this.GroupBox1.Size = new System.Drawing.Size(563, 294);
+            this.GroupBox1.TabIndex = 5;
+            this.GroupBox1.TabStop = false;
+            this.GroupBox1.Text = "Chat Assistant";
+            this.GroupBox1.Enter += new System.EventHandler(this.rtbChat_Enter);
+            // 
             // rtbChat
             // 
-            this.rtbChat.Location = new System.Drawing.Point(12, 27);
+            this.rtbChat.Location = new System.Drawing.Point(6, 19);
             this.rtbChat.Name = "rtbChat";
-            this.rtbChat.Size = new System.Drawing.Size(563, 294);
-            this.rtbChat.TabIndex = 5;
-            this.rtbChat.TabStop = false;
-            this.rtbChat.Text = "Chat Assistant";
+            this.rtbChat.Size = new System.Drawing.Size(551, 269);
+            this.rtbChat.TabIndex = 0;
+            this.rtbChat.Text = "";
+            this.rtbChat.TextChanged += new System.EventHandler(this.rtbChat_TextChanged);
             // 
             // grpQuiz
             // 
@@ -122,10 +137,19 @@
             this.grpLog.TabStop = false;
             this.grpLog.Text = "Activity Log";
             // 
+            // rtbActivityLog
+            // 
+            this.rtbActivityLog.Location = new System.Drawing.Point(11, 29);
+            this.rtbActivityLog.Name = "rtbActivityLog";
+            this.rtbActivityLog.ReadOnly = true;
+            this.rtbActivityLog.Size = new System.Drawing.Size(351, 96);
+            this.rtbActivityLog.TabIndex = 9;
+            this.rtbActivityLog.Text = "";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 38);
+            this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
             this.label1.TabIndex = 0;
@@ -133,20 +157,22 @@
             // 
             // txtTaskTitle
             // 
-            this.txtTaskTitle.Location = new System.Drawing.Point(9, 54);
+            this.txtTaskTitle.Location = new System.Drawing.Point(9, 38);
             this.txtTaskTitle.Name = "txtTaskTitle";
             this.txtTaskTitle.Size = new System.Drawing.Size(364, 20);
             this.txtTaskTitle.TabIndex = 1;
             // 
             // grpTasks
             // 
+            this.grpTasks.Controls.Add(this.txtTaskID);
+            this.grpTasks.Controls.Add(this.label5);
             this.grpTasks.Controls.Add(this.btnDeleteTask);
             this.grpTasks.Controls.Add(this.btnCompleteTask);
             this.grpTasks.Controls.Add(this.btnViewTask);
             this.grpTasks.Controls.Add(this.btnAddTask);
             this.grpTasks.Controls.Add(this.dtpReminder);
             this.grpTasks.Controls.Add(this.label3);
-            this.grpTasks.Controls.Add(this.textBox1);
+            this.grpTasks.Controls.Add(this.txtTaskDescription);
             this.grpTasks.Controls.Add(this.label2);
             this.grpTasks.Controls.Add(this.txtTaskTitle);
             this.grpTasks.Controls.Add(this.label1);
@@ -159,46 +185,50 @@
             // 
             // btnDeleteTask
             // 
-            this.btnDeleteTask.Location = new System.Drawing.Point(141, 242);
+            this.btnDeleteTask.Location = new System.Drawing.Point(131, 247);
             this.btnDeleteTask.Name = "btnDeleteTask";
             this.btnDeleteTask.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteTask.TabIndex = 9;
             this.btnDeleteTask.Text = "Delete Task";
             this.btnDeleteTask.UseVisualStyleBackColor = true;
+            this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
             // 
             // btnCompleteTask
             // 
-            this.btnCompleteTask.Location = new System.Drawing.Point(22, 243);
+            this.btnCompleteTask.Location = new System.Drawing.Point(12, 248);
             this.btnCompleteTask.Name = "btnCompleteTask";
             this.btnCompleteTask.Size = new System.Drawing.Size(86, 23);
             this.btnCompleteTask.TabIndex = 8;
             this.btnCompleteTask.Text = "Complete Task";
             this.btnCompleteTask.UseVisualStyleBackColor = true;
+            this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
             // 
             // btnViewTask
             // 
-            this.btnViewTask.Location = new System.Drawing.Point(141, 214);
+            this.btnViewTask.Location = new System.Drawing.Point(131, 219);
             this.btnViewTask.Name = "btnViewTask";
             this.btnViewTask.Size = new System.Drawing.Size(75, 23);
             this.btnViewTask.TabIndex = 7;
             this.btnViewTask.Text = "View Tasks";
             this.btnViewTask.UseVisualStyleBackColor = true;
+            this.btnViewTask.Click += new System.EventHandler(this.btnViewTask_Click);
             // 
             // btnAddTask
             // 
             this.btnAddTask.BackColor = System.Drawing.Color.SteelBlue;
             this.btnAddTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAddTask.ForeColor = System.Drawing.Color.White;
-            this.btnAddTask.Location = new System.Drawing.Point(22, 214);
+            this.btnAddTask.Location = new System.Drawing.Point(12, 219);
             this.btnAddTask.Name = "btnAddTask";
             this.btnAddTask.Size = new System.Drawing.Size(86, 23);
             this.btnAddTask.TabIndex = 6;
             this.btnAddTask.Text = "Add Task";
             this.btnAddTask.UseVisualStyleBackColor = false;
+            this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
             // 
             // dtpReminder
             // 
-            this.dtpReminder.Location = new System.Drawing.Point(9, 177);
+            this.dtpReminder.Location = new System.Drawing.Point(6, 134);
             this.dtpReminder.Name = "dtpReminder";
             this.dtpReminder.Size = new System.Drawing.Size(200, 20);
             this.dtpReminder.TabIndex = 5;
@@ -206,36 +236,43 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 143);
+            this.label3.Location = new System.Drawing.Point(6, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
             this.label3.TabIndex = 4;
             this.label3.Text = "Reminder Date";
             // 
-            // textBox1
+            // txtTaskDescription
             // 
-            this.textBox1.Location = new System.Drawing.Point(9, 110);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(364, 20);
-            this.textBox1.TabIndex = 3;
+            this.txtTaskDescription.Location = new System.Drawing.Point(9, 86);
+            this.txtTaskDescription.Name = "txtTaskDescription";
+            this.txtTaskDescription.Size = new System.Drawing.Size(364, 20);
+            this.txtTaskDescription.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(6, 94);
+            this.label2.Location = new System.Drawing.Point(6, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Description";
             // 
-            // rtbActivityLog
+            // label5
             // 
-            this.rtbActivityLog.Location = new System.Drawing.Point(11, 29);
-            this.rtbActivityLog.Name = "rtbActivityLog";
-            this.rtbActivityLog.ReadOnly = true;
-            this.rtbActivityLog.Size = new System.Drawing.Size(351, 96);
-            this.rtbActivityLog.TabIndex = 9;
-            this.rtbActivityLog.Text = "";
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "TaskID";
+            // 
+            // txtTaskID
+            // 
+            this.txtTaskID.Location = new System.Drawing.Point(6, 183);
+            this.txtTaskID.Name = "txtTaskID";
+            this.txtTaskID.Size = new System.Drawing.Size(203, 20);
+            this.txtTaskID.TabIndex = 11;
             // 
             // Form1
             // 
@@ -245,12 +282,13 @@
             this.Controls.Add(this.grpLog);
             this.Controls.Add(this.grpQuiz);
             this.Controls.Add(this.grpTasks);
-            this.Controls.Add(this.rtbChat);
+            this.Controls.Add(this.GroupBox1);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.txtUserInput);
             this.Controls.Add(this.lblTitle);
             this.Name = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.GroupBox1.ResumeLayout(false);
             this.grpQuiz.ResumeLayout(false);
             this.grpQuiz.PerformLayout();
             this.grpLog.ResumeLayout(false);
@@ -266,7 +304,7 @@
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.TextBox txtUserInput;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.GroupBox rtbChat;
+        private System.Windows.Forms.GroupBox GroupBox1;
         private System.Windows.Forms.GroupBox grpQuiz;
         private System.Windows.Forms.GroupBox grpLog;
         private System.Windows.Forms.Label label1;
@@ -274,7 +312,7 @@
         private System.Windows.Forms.GroupBox grpTasks;
         private System.Windows.Forms.DateTimePicker dtpReminder;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTaskDescription;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDeleteTask;
         private System.Windows.Forms.Button btnCompleteTask;
@@ -282,6 +320,9 @@
         private System.Windows.Forms.Button btnAddTask;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.RichTextBox rtbActivityLog;
+        private System.Windows.Forms.RichTextBox rtbChat;
+        private System.Windows.Forms.TextBox txtTaskID;
+        private System.Windows.Forms.Label label5;
     }
 }
 
