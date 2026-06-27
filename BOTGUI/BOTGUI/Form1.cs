@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BOTGUI.Services;
+using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.Media;
 using System.Windows.Forms;
@@ -43,6 +45,20 @@ namespace BOTGUI
         public Form1()
         {
             InitializeComponent();
+            Database db = new Database();
+
+            try
+            {
+                using (MySqlConnection connection = db.GetConnection())
+                {
+                    connection.Open();
+                    MessageBox.Show("Database connected successfully!");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
             PlayGreeting();
 
             rtbChat.AppendText("========================================\n");
