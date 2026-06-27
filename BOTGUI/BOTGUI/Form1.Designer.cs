@@ -233,7 +233,7 @@
             this.rtbActivityLog.Location = new System.Drawing.Point(11, 29);
             this.rtbActivityLog.Name = "rtbActivityLog";
             this.rtbActivityLog.ReadOnly = true;
-            this.rtbActivityLog.Size = new System.Drawing.Size(100, 96);
+            this.rtbActivityLog.Size = new System.Drawing.Size(351, 96);
             this.rtbActivityLog.TabIndex = 9;
             this.rtbActivityLog.Text = "";
             // 

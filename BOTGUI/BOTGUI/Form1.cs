@@ -10,7 +10,7 @@ namespace BOTGUI
     public partial class Form1 : Form
     {
         Random random = new Random();
-
+        
         string favoriteTopic = "";
         string currentTopic = "";
 

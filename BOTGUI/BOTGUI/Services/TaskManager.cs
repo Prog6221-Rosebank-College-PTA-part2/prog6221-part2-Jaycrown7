@@ -3,13 +3,13 @@ using MySql.Data.MySqlClient;
 using System.Collections.Generic;
 
 namespace BOTGUI.Services
-{
+{  // This class manages tasks in the database.
     public class TaskManager
     {
         Database db = new Database();
 
         public void AddTask(TaskItem task)
-        {
+        { 
             using (MySqlConnection conn = db.GetConnection())
             {
                 conn.Open();

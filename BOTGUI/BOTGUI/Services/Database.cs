@@ -8,7 +8,7 @@ namespace BOTGUI.Services
         private string connectionString =
             "server=localhost;database=CyberBotDB;uid=root;password=Tselapedi@12345@T;";
 
-        public MySqlConnection GetConnection()
+        public MySqlConnection GetConnection() 
         {
             return new MySqlConnection(connectionString);
         }
