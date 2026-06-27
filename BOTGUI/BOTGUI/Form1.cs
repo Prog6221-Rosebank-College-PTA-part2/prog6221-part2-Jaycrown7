@@ -107,6 +107,62 @@ namespace BOTGUI
         private void btnSend_Click(object sender, EventArgs e)
         {
             string input = txtUserInput.Text.Trim().ToLower();
+            // ---------- NLP SIMULATION ----------
+
+            // Start Quiz
+            if (input.Contains("quiz") ||
+                input.Contains("test me") ||
+                input.Contains("play game") ||
+                input.Contains("play quiz") ||
+                input.Contains("cyber game"))
+            {
+                btnStartQuiz.PerformClick();
+                rtbChat.AppendText("Bot: Starting the Cybersecurity Quiz...\n\n");
+                logger.Log("NLP: Quiz started");
+                txtUserInput.Clear();
+                return;
+            }
+
+            // Show Activity Log
+            if (input.Contains("activity") ||
+                input.Contains("what have you done") ||
+                input.Contains("show log") ||
+                input.Contains("history"))
+            {
+                btnShowLog.PerformClick();
+                rtbChat.AppendText("Bot: Displaying your recent activity.\n\n");
+                logger.Log("NLP: Activity log requested");
+                txtUserInput.Clear();
+                return;
+            }
+
+            // View Tasks
+            if (input.Contains("show tasks") ||
+                input.Contains("view tasks") ||
+                input.Contains("my tasks") ||
+                input.Contains("task list"))
+            {
+                btnViewTasks.PerformClick();
+                logger.Log("NLP: Viewed tasks");
+                txtUserInput.Clear();
+                return;
+            }
+
+            // Reminder / Task
+            if ((input.Contains("remind") ||
+                 input.Contains("remember")) &&
+                 (input.Contains("password") ||
+                  input.Contains("privacy") ||
+                  input.Contains("2fa")))
+            {
+                rtbChat.AppendText("Bot: I understand you want to create a cybersecurity reminder.\n");
+                rtbChat.AppendText("Bot: Please use the Task Assistant below to add it.\n\n");
+
+                logger.Log("NLP: Reminder recognised");
+
+                txtUserInput.Clear();
+                return;
+            }
 
             if (string.IsNullOrWhiteSpace(input))
             {

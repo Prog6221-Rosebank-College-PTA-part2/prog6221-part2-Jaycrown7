@@ -44,7 +44,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.btnDeleteTask = new System.Windows.Forms.Button();
             this.btnCompleteTask = new System.Windows.Forms.Button();
-            this.btnViewTask = new System.Windows.Forms.Button();
+            this.btnViewTasks = new System.Windows.Forms.Button();
             this.btnAddTask = new System.Windows.Forms.Button();
             this.dtpReminder = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -184,7 +184,7 @@
             this.grpTasks.Controls.Add(this.label5);
             this.grpTasks.Controls.Add(this.btnDeleteTask);
             this.grpTasks.Controls.Add(this.btnCompleteTask);
-            this.grpTasks.Controls.Add(this.btnViewTask);
+            this.grpTasks.Controls.Add(this.btnViewTasks);
             this.grpTasks.Controls.Add(this.btnAddTask);
             this.grpTasks.Controls.Add(this.dtpReminder);
             this.grpTasks.Controls.Add(this.label3);
@@ -235,15 +235,15 @@
             this.btnCompleteTask.UseVisualStyleBackColor = true;
             this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
             // 
-            // btnViewTask
+            // btnViewTasks
             // 
-            this.btnViewTask.Location = new System.Drawing.Point(131, 219);
-            this.btnViewTask.Name = "btnViewTask";
-            this.btnViewTask.Size = new System.Drawing.Size(75, 23);
-            this.btnViewTask.TabIndex = 7;
-            this.btnViewTask.Text = "View Tasks";
-            this.btnViewTask.UseVisualStyleBackColor = true;
-            this.btnViewTask.Click += new System.EventHandler(this.btnViewTask_Click);
+            this.btnViewTasks.Location = new System.Drawing.Point(131, 219);
+            this.btnViewTasks.Name = "btnViewTasks";
+            this.btnViewTasks.Size = new System.Drawing.Size(75, 23);
+            this.btnViewTasks.TabIndex = 7;
+            this.btnViewTasks.Text = "View Tasks";
+            this.btnViewTasks.UseVisualStyleBackColor = true;
+            this.btnViewTasks.Click += new System.EventHandler(this.btnViewTask_Click);
             // 
             // btnAddTask
             // 
@@ -415,7 +415,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnDeleteTask;
         private System.Windows.Forms.Button btnCompleteTask;
-        private System.Windows.Forms.Button btnViewTask;
+        private System.Windows.Forms.Button btnViewTasks;
         private System.Windows.Forms.Button btnAddTask;
         private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.RichTextBox rtbActivityLog;
