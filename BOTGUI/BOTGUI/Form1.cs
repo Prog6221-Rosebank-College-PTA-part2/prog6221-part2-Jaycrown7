@@ -12,6 +12,7 @@ namespace BOTGUI
     {
         Random random = new Random();
         TaskManager taskManager = new TaskManager();
+        ActivityLogger logger = new ActivityLogger();
 
         string favoriteTopic = "";
         string currentTopic = "";
@@ -290,6 +291,7 @@ namespace BOTGUI
 
         private void btnAddTask_Click(object sender, EventArgs e)
         {
+            logger.Log("Viewed Tasks");
             if (string.IsNullOrWhiteSpace(txtTaskTitle.Text))
             {
                 MessageBox.Show("Please enter a task title.");
@@ -355,6 +357,7 @@ namespace BOTGUI
 
             if (int.TryParse(txtTaskID.Text, out int taskID))
             {
+                logger.Log("Deleted Task ID " + taskID);
                 taskManager.DeleteTask(taskID);
 
                 MessageBox.Show("Task deleted successfully.");
@@ -375,6 +378,8 @@ namespace BOTGUI
             {
                 taskManager.CompleteTask(taskID);
 
+                logger.Log("Completed Task ID " + taskID);
+
                 MessageBox.Show("Task marked as completed.");
 
                 rtbChat.AppendText("Bot: Task marked as completed.\n\n");
@@ -387,8 +392,16 @@ namespace BOTGUI
             }
 
         }
-    
-    
+
+        private void btnShowLog_Click(object sender, EventArgs e)
+        {
+            rtbActivityLog.Clear();
+
+            foreach (string activity in logger.GetRecentActivities())
+            {
+                rtbActivityLog.AppendText(activity + Environment.NewLine);
+            }
+        }
     }
     
 }

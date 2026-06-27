@@ -40,6 +40,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtTaskTitle = new System.Windows.Forms.TextBox();
             this.grpTasks = new System.Windows.Forms.GroupBox();
+            this.txtTaskID = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.btnDeleteTask = new System.Windows.Forms.Button();
             this.btnCompleteTask = new System.Windows.Forms.Button();
             this.btnViewTask = new System.Windows.Forms.Button();
@@ -48,8 +50,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTaskDescription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtTaskID = new System.Windows.Forms.TextBox();
+            this.btnShowLog = new System.Windows.Forms.Button();
             this.GroupBox1.SuspendLayout();
             this.grpQuiz.SuspendLayout();
             this.grpLog.SuspendLayout();
@@ -129,17 +130,18 @@
             // 
             // grpLog
             // 
+            this.grpLog.Controls.Add(this.btnShowLog);
             this.grpLog.Controls.Add(this.rtbActivityLog);
             this.grpLog.Location = new System.Drawing.Point(25, 452);
             this.grpLog.Name = "grpLog";
-            this.grpLog.Size = new System.Drawing.Size(982, 145);
+            this.grpLog.Size = new System.Drawing.Size(982, 155);
             this.grpLog.TabIndex = 8;
             this.grpLog.TabStop = false;
             this.grpLog.Text = "Activity Log";
             // 
             // rtbActivityLog
             // 
-            this.rtbActivityLog.Location = new System.Drawing.Point(11, 29);
+            this.rtbActivityLog.Location = new System.Drawing.Point(6, 19);
             this.rtbActivityLog.Name = "rtbActivityLog";
             this.rtbActivityLog.ReadOnly = true;
             this.rtbActivityLog.Size = new System.Drawing.Size(351, 96);
@@ -182,6 +184,22 @@
             this.grpTasks.TabIndex = 6;
             this.grpTasks.TabStop = false;
             this.grpTasks.Text = "Task Assistant";
+            // 
+            // txtTaskID
+            // 
+            this.txtTaskID.Location = new System.Drawing.Point(6, 183);
+            this.txtTaskID.Name = "txtTaskID";
+            this.txtTaskID.Size = new System.Drawing.Size(203, 20);
+            this.txtTaskID.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "TaskID";
             // 
             // btnDeleteTask
             // 
@@ -258,21 +276,15 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Description";
             // 
-            // label5
+            // btnShowLog
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(6, 167);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 13);
-            this.label5.TabIndex = 10;
-            this.label5.Text = "TaskID";
-            // 
-            // txtTaskID
-            // 
-            this.txtTaskID.Location = new System.Drawing.Point(6, 183);
-            this.txtTaskID.Name = "txtTaskID";
-            this.txtTaskID.Size = new System.Drawing.Size(203, 20);
-            this.txtTaskID.TabIndex = 11;
+            this.btnShowLog.Location = new System.Drawing.Point(250, 121);
+            this.btnShowLog.Name = "btnShowLog";
+            this.btnShowLog.Size = new System.Drawing.Size(107, 23);
+            this.btnShowLog.TabIndex = 10;
+            this.btnShowLog.Text = "Show Activity Log";
+            this.btnShowLog.UseVisualStyleBackColor = true;
+            this.btnShowLog.Click += new System.EventHandler(this.btnShowLog_Click);
             // 
             // Form1
             // 
@@ -323,6 +335,7 @@
         private System.Windows.Forms.RichTextBox rtbChat;
         private System.Windows.Forms.TextBox txtTaskID;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnShowLog;
     }
 }
 
