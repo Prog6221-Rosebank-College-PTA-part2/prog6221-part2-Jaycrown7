@@ -34,8 +34,16 @@
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbChat = new System.Windows.Forms.RichTextBox();
             this.grpQuiz = new System.Windows.Forms.GroupBox();
+            this.rbOptionD = new System.Windows.Forms.RadioButton();
+            this.rbOptionC = new System.Windows.Forms.RadioButton();
+            this.rbOptionB = new System.Windows.Forms.RadioButton();
+            this.rbOptionA = new System.Windows.Forms.RadioButton();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.btnSubmitAnswer = new System.Windows.Forms.Button();
+            this.btnStartQuiz = new System.Windows.Forms.Button();
             this.lblQuestion = new System.Windows.Forms.Label();
             this.grpLog = new System.Windows.Forms.GroupBox();
+            this.btnShowLog = new System.Windows.Forms.Button();
             this.rtbActivityLog = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTaskTitle = new System.Windows.Forms.TextBox();
@@ -50,14 +58,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtTaskDescription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.btnShowLog = new System.Windows.Forms.Button();
-            this.btnStartQuiz = new System.Windows.Forms.Button();
-            this.btnSubmitAnswer = new System.Windows.Forms.Button();
-            this.lblScore = new System.Windows.Forms.Label();
-            this.rbOptionA = new System.Windows.Forms.RadioButton();
-            this.rbOptionB = new System.Windows.Forms.RadioButton();
-            this.rbOptionC = new System.Windows.Forms.RadioButton();
-            this.rbOptionD = new System.Windows.Forms.RadioButton();
             this.GroupBox1.SuspendLayout();
             this.grpQuiz.SuspendLayout();
             this.grpLog.SuspendLayout();
@@ -68,7 +68,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.Lime;
+            this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblTitle.Location = new System.Drawing.Point(279, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(362, 24);
@@ -87,10 +87,10 @@
             // btnSend
             // 
             this.btnSend.BackColor = System.Drawing.Color.White;
-            this.btnSend.ForeColor = System.Drawing.Color.Black;
-            this.btnSend.Location = new System.Drawing.Point(12, 365);
+            this.btnSend.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSend.Location = new System.Drawing.Point(12, 353);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(124, 23);
+            this.btnSend.Size = new System.Drawing.Size(563, 23);
             this.btnSend.TabIndex = 3;
             this.btnSend.Text = "SEND";
             this.btnSend.UseVisualStyleBackColor = false;
@@ -133,9 +133,85 @@
             this.grpQuiz.TabStop = false;
             this.grpQuiz.Text = "Cybersecurity Quiz";
             // 
+            // rbOptionD
+            // 
+            this.rbOptionD.AutoSize = true;
+            this.rbOptionD.Location = new System.Drawing.Point(9, 125);
+            this.rbOptionD.Name = "rbOptionD";
+            this.rbOptionD.Size = new System.Drawing.Size(67, 17);
+            this.rbOptionD.TabIndex = 8;
+            this.rbOptionD.TabStop = true;
+            this.rbOptionD.Text = "Option D";
+            this.rbOptionD.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionC
+            // 
+            this.rbOptionC.AutoSize = true;
+            this.rbOptionC.Location = new System.Drawing.Point(9, 100);
+            this.rbOptionC.Name = "rbOptionC";
+            this.rbOptionC.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionC.TabIndex = 7;
+            this.rbOptionC.TabStop = true;
+            this.rbOptionC.Text = "Option C";
+            this.rbOptionC.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionB
+            // 
+            this.rbOptionB.AutoSize = true;
+            this.rbOptionB.Location = new System.Drawing.Point(9, 77);
+            this.rbOptionB.Name = "rbOptionB";
+            this.rbOptionB.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionB.TabIndex = 6;
+            this.rbOptionB.TabStop = true;
+            this.rbOptionB.Text = "Option B";
+            this.rbOptionB.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionA
+            // 
+            this.rbOptionA.AutoSize = true;
+            this.rbOptionA.Location = new System.Drawing.Point(9, 54);
+            this.rbOptionA.Name = "rbOptionA";
+            this.rbOptionA.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionA.TabIndex = 5;
+            this.rbOptionA.TabStop = true;
+            this.rbOptionA.Text = "Option A";
+            this.rbOptionA.UseVisualStyleBackColor = true;
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(9, 156);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(47, 13);
+            this.lblScore.TabIndex = 4;
+            this.lblScore.Text = "Score: 0";
+            // 
+            // btnSubmitAnswer
+            // 
+            this.btnSubmitAnswer.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSubmitAnswer.Location = new System.Drawing.Point(6, 201);
+            this.btnSubmitAnswer.Name = "btnSubmitAnswer";
+            this.btnSubmitAnswer.Size = new System.Drawing.Size(90, 23);
+            this.btnSubmitAnswer.TabIndex = 3;
+            this.btnSubmitAnswer.Text = "Submit Answer";
+            this.btnSubmitAnswer.UseVisualStyleBackColor = true;
+            this.btnSubmitAnswer.Click += new System.EventHandler(this.btnSubmitAnswer_Click);
+            // 
+            // btnStartQuiz
+            // 
+            this.btnStartQuiz.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnStartQuiz.Location = new System.Drawing.Point(6, 172);
+            this.btnStartQuiz.Name = "btnStartQuiz";
+            this.btnStartQuiz.Size = new System.Drawing.Size(75, 23);
+            this.btnStartQuiz.TabIndex = 2;
+            this.btnStartQuiz.Text = "Start Quiz";
+            this.btnStartQuiz.UseVisualStyleBackColor = true;
+            this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
+            // 
             // lblQuestion
             // 
             this.lblQuestion.AutoSize = true;
+            this.lblQuestion.ForeColor = System.Drawing.Color.SteelBlue;
             this.lblQuestion.Location = new System.Drawing.Point(6, 38);
             this.lblQuestion.Name = "lblQuestion";
             this.lblQuestion.Size = new System.Drawing.Size(126, 13);
@@ -146,19 +222,30 @@
             // 
             this.grpLog.Controls.Add(this.btnShowLog);
             this.grpLog.Controls.Add(this.rtbActivityLog);
-            this.grpLog.Location = new System.Drawing.Point(25, 452);
+            this.grpLog.Location = new System.Drawing.Point(25, 394);
             this.grpLog.Name = "grpLog";
-            this.grpLog.Size = new System.Drawing.Size(550, 155);
+            this.grpLog.Size = new System.Drawing.Size(550, 213);
             this.grpLog.TabIndex = 8;
             this.grpLog.TabStop = false;
             this.grpLog.Text = "Activity Log";
+            // 
+            // btnShowLog
+            // 
+            this.btnShowLog.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnShowLog.Location = new System.Drawing.Point(6, 170);
+            this.btnShowLog.Name = "btnShowLog";
+            this.btnShowLog.Size = new System.Drawing.Size(538, 23);
+            this.btnShowLog.TabIndex = 10;
+            this.btnShowLog.Text = "Show Activity Log";
+            this.btnShowLog.UseVisualStyleBackColor = true;
+            this.btnShowLog.Click += new System.EventHandler(this.btnShowLog_Click);
             // 
             // rtbActivityLog
             // 
             this.rtbActivityLog.Location = new System.Drawing.Point(6, 19);
             this.rtbActivityLog.Name = "rtbActivityLog";
             this.rtbActivityLog.ReadOnly = true;
-            this.rtbActivityLog.Size = new System.Drawing.Size(351, 96);
+            this.rtbActivityLog.Size = new System.Drawing.Size(538, 145);
             this.rtbActivityLog.TabIndex = 9;
             this.rtbActivityLog.Text = "";
             // 
@@ -217,12 +304,15 @@
             // 
             // btnDeleteTask
             // 
+            this.btnDeleteTask.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDeleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTask.ForeColor = System.Drawing.Color.White;
             this.btnDeleteTask.Location = new System.Drawing.Point(131, 247);
             this.btnDeleteTask.Name = "btnDeleteTask";
             this.btnDeleteTask.Size = new System.Drawing.Size(75, 23);
             this.btnDeleteTask.TabIndex = 9;
             this.btnDeleteTask.Text = "Delete Task";
-            this.btnDeleteTask.UseVisualStyleBackColor = true;
+            this.btnDeleteTask.UseVisualStyleBackColor = false;
             this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
             // 
             // btnCompleteTask
@@ -289,89 +379,6 @@
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 2;
             this.label2.Text = "Description";
-            // 
-            // btnShowLog
-            // 
-            this.btnShowLog.Location = new System.Drawing.Point(250, 121);
-            this.btnShowLog.Name = "btnShowLog";
-            this.btnShowLog.Size = new System.Drawing.Size(107, 23);
-            this.btnShowLog.TabIndex = 10;
-            this.btnShowLog.Text = "Show Activity Log";
-            this.btnShowLog.UseVisualStyleBackColor = true;
-            this.btnShowLog.Click += new System.EventHandler(this.btnShowLog_Click);
-            // 
-            // btnStartQuiz
-            // 
-            this.btnStartQuiz.Location = new System.Drawing.Point(6, 172);
-            this.btnStartQuiz.Name = "btnStartQuiz";
-            this.btnStartQuiz.Size = new System.Drawing.Size(75, 23);
-            this.btnStartQuiz.TabIndex = 2;
-            this.btnStartQuiz.Text = "Start Quiz";
-            this.btnStartQuiz.UseVisualStyleBackColor = true;
-            this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
-            // 
-            // btnSubmitAnswer
-            // 
-            this.btnSubmitAnswer.Location = new System.Drawing.Point(6, 201);
-            this.btnSubmitAnswer.Name = "btnSubmitAnswer";
-            this.btnSubmitAnswer.Size = new System.Drawing.Size(90, 23);
-            this.btnSubmitAnswer.TabIndex = 3;
-            this.btnSubmitAnswer.Text = "Submit Answer";
-            this.btnSubmitAnswer.UseVisualStyleBackColor = true;
-            this.btnSubmitAnswer.Click += new System.EventHandler(this.btnSubmitAnswer_Click);
-            // 
-            // lblScore
-            // 
-            this.lblScore.AutoSize = true;
-            this.lblScore.Location = new System.Drawing.Point(9, 156);
-            this.lblScore.Name = "lblScore";
-            this.lblScore.Size = new System.Drawing.Size(47, 13);
-            this.lblScore.TabIndex = 4;
-            this.lblScore.Text = "Score: 0";
-            // 
-            // rbOptionA
-            // 
-            this.rbOptionA.AutoSize = true;
-            this.rbOptionA.Location = new System.Drawing.Point(9, 54);
-            this.rbOptionA.Name = "rbOptionA";
-            this.rbOptionA.Size = new System.Drawing.Size(66, 17);
-            this.rbOptionA.TabIndex = 5;
-            this.rbOptionA.TabStop = true;
-            this.rbOptionA.Text = "Option A";
-            this.rbOptionA.UseVisualStyleBackColor = true;
-            // 
-            // rbOptionB
-            // 
-            this.rbOptionB.AutoSize = true;
-            this.rbOptionB.Location = new System.Drawing.Point(9, 77);
-            this.rbOptionB.Name = "rbOptionB";
-            this.rbOptionB.Size = new System.Drawing.Size(66, 17);
-            this.rbOptionB.TabIndex = 6;
-            this.rbOptionB.TabStop = true;
-            this.rbOptionB.Text = "Option B";
-            this.rbOptionB.UseVisualStyleBackColor = true;
-            // 
-            // rbOptionC
-            // 
-            this.rbOptionC.AutoSize = true;
-            this.rbOptionC.Location = new System.Drawing.Point(9, 100);
-            this.rbOptionC.Name = "rbOptionC";
-            this.rbOptionC.Size = new System.Drawing.Size(66, 17);
-            this.rbOptionC.TabIndex = 7;
-            this.rbOptionC.TabStop = true;
-            this.rbOptionC.Text = "Option C";
-            this.rbOptionC.UseVisualStyleBackColor = true;
-            // 
-            // rbOptionD
-            // 
-            this.rbOptionD.AutoSize = true;
-            this.rbOptionD.Location = new System.Drawing.Point(9, 125);
-            this.rbOptionD.Name = "rbOptionD";
-            this.rbOptionD.Size = new System.Drawing.Size(67, 17);
-            this.rbOptionD.TabIndex = 8;
-            this.rbOptionD.TabStop = true;
-            this.rbOptionD.Text = "Option D";
-            this.rbOptionD.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 

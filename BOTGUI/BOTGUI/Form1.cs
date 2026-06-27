@@ -86,7 +86,7 @@ namespace BOTGUI
 
         }
 
-        private void PlayGreeting()
+        private void PlayGreeting() 
         {
             try
             {
