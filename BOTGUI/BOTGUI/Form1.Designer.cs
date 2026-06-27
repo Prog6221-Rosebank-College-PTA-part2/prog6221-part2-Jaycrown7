@@ -1,0 +1,442 @@
+﻿namespace BOTGUI
+{
+    partial class Form1
+    {
+        /// <summary>
+        /// Required designer variable.
+        /// </summary>
+        private System.ComponentModel.IContainer components = null;
+
+        /// <summary>
+        /// Clean up any resources being used.
+        /// </summary>
+        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing && (components != null))
+            {
+                components.Dispose();
+            }
+            base.Dispose(disposing);
+        }
+
+        #region Windows Form Designer generated code
+
+        /// <summary>
+        /// Required method for Designer support - do not modify
+        /// the contents of this method with the code editor.
+        /// </summary>
+        private void InitializeComponent()
+        {
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.txtUserInput = new System.Windows.Forms.TextBox();
+            this.btnSend = new System.Windows.Forms.Button();
+            this.GroupBox1 = new System.Windows.Forms.GroupBox();
+            this.rtbChat = new System.Windows.Forms.RichTextBox();
+            this.grpQuiz = new System.Windows.Forms.GroupBox();
+            this.rbOptionD = new System.Windows.Forms.RadioButton();
+            this.rbOptionC = new System.Windows.Forms.RadioButton();
+            this.rbOptionB = new System.Windows.Forms.RadioButton();
+            this.rbOptionA = new System.Windows.Forms.RadioButton();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.btnSubmitAnswer = new System.Windows.Forms.Button();
+            this.btnStartQuiz = new System.Windows.Forms.Button();
+            this.lblQuestion = new System.Windows.Forms.Label();
+            this.grpLog = new System.Windows.Forms.GroupBox();
+            this.btnShowLog = new System.Windows.Forms.Button();
+            this.rtbActivityLog = new System.Windows.Forms.RichTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtTaskTitle = new System.Windows.Forms.TextBox();
+            this.grpTasks = new System.Windows.Forms.GroupBox();
+            this.txtTaskID = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.btnDeleteTask = new System.Windows.Forms.Button();
+            this.btnCompleteTask = new System.Windows.Forms.Button();
+            this.btnViewTasks = new System.Windows.Forms.Button();
+            this.btnAddTask = new System.Windows.Forms.Button();
+            this.dtpReminder = new System.Windows.Forms.DateTimePicker();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtTaskDescription = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.GroupBox1.SuspendLayout();
+            this.grpQuiz.SuspendLayout();
+            this.grpLog.SuspendLayout();
+            this.grpTasks.SuspendLayout();
+            this.SuspendLayout();
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.Location = new System.Drawing.Point(279, 0);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(362, 24);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "CYBERSECURITY AWARENESS BOT";
+            this.lblTitle.Click += new System.EventHandler(this.label1_Click);
+            // 
+            // txtUserInput
+            // 
+            this.txtUserInput.ForeColor = System.Drawing.Color.Black;
+            this.txtUserInput.Location = new System.Drawing.Point(12, 327);
+            this.txtUserInput.Name = "txtUserInput";
+            this.txtUserInput.Size = new System.Drawing.Size(563, 20);
+            this.txtUserInput.TabIndex = 2;
+            // 
+            // btnSend
+            // 
+            this.btnSend.BackColor = System.Drawing.Color.White;
+            this.btnSend.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSend.Location = new System.Drawing.Point(12, 353);
+            this.btnSend.Name = "btnSend";
+            this.btnSend.Size = new System.Drawing.Size(563, 23);
+            this.btnSend.TabIndex = 3;
+            this.btnSend.Text = "SEND";
+            this.btnSend.UseVisualStyleBackColor = false;
+            this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
+            // 
+            // GroupBox1
+            // 
+            this.GroupBox1.Controls.Add(this.rtbChat);
+            this.GroupBox1.Location = new System.Drawing.Point(12, 27);
+            this.GroupBox1.Name = "GroupBox1";
+            this.GroupBox1.Size = new System.Drawing.Size(563, 294);
+            this.GroupBox1.TabIndex = 5;
+            this.GroupBox1.TabStop = false;
+            this.GroupBox1.Text = "Chat Assistant";
+            this.GroupBox1.Enter += new System.EventHandler(this.rtbChat_Enter);
+            // 
+            // rtbChat
+            // 
+            this.rtbChat.Location = new System.Drawing.Point(6, 19);
+            this.rtbChat.Name = "rtbChat";
+            this.rtbChat.Size = new System.Drawing.Size(551, 269);
+            this.rtbChat.TabIndex = 0;
+            this.rtbChat.Text = "";
+            this.rtbChat.TextChanged += new System.EventHandler(this.rtbChat_TextChanged);
+            // 
+            // grpQuiz
+            // 
+            this.grpQuiz.Controls.Add(this.rbOptionD);
+            this.grpQuiz.Controls.Add(this.rbOptionC);
+            this.grpQuiz.Controls.Add(this.rbOptionB);
+            this.grpQuiz.Controls.Add(this.rbOptionA);
+            this.grpQuiz.Controls.Add(this.lblScore);
+            this.grpQuiz.Controls.Add(this.btnSubmitAnswer);
+            this.grpQuiz.Controls.Add(this.btnStartQuiz);
+            this.grpQuiz.Controls.Add(this.lblQuestion);
+            this.grpQuiz.Location = new System.Drawing.Point(581, 327);
+            this.grpQuiz.Name = "grpQuiz";
+            this.grpQuiz.Size = new System.Drawing.Size(426, 280);
+            this.grpQuiz.TabIndex = 7;
+            this.grpQuiz.TabStop = false;
+            this.grpQuiz.Text = "Cybersecurity Quiz";
+            // 
+            // rbOptionD
+            // 
+            this.rbOptionD.AutoSize = true;
+            this.rbOptionD.Location = new System.Drawing.Point(9, 125);
+            this.rbOptionD.Name = "rbOptionD";
+            this.rbOptionD.Size = new System.Drawing.Size(67, 17);
+            this.rbOptionD.TabIndex = 8;
+            this.rbOptionD.TabStop = true;
+            this.rbOptionD.Text = "Option D";
+            this.rbOptionD.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionC
+            // 
+            this.rbOptionC.AutoSize = true;
+            this.rbOptionC.Location = new System.Drawing.Point(9, 100);
+            this.rbOptionC.Name = "rbOptionC";
+            this.rbOptionC.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionC.TabIndex = 7;
+            this.rbOptionC.TabStop = true;
+            this.rbOptionC.Text = "Option C";
+            this.rbOptionC.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionB
+            // 
+            this.rbOptionB.AutoSize = true;
+            this.rbOptionB.Location = new System.Drawing.Point(9, 77);
+            this.rbOptionB.Name = "rbOptionB";
+            this.rbOptionB.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionB.TabIndex = 6;
+            this.rbOptionB.TabStop = true;
+            this.rbOptionB.Text = "Option B";
+            this.rbOptionB.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionA
+            // 
+            this.rbOptionA.AutoSize = true;
+            this.rbOptionA.Location = new System.Drawing.Point(9, 54);
+            this.rbOptionA.Name = "rbOptionA";
+            this.rbOptionA.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionA.TabIndex = 5;
+            this.rbOptionA.TabStop = true;
+            this.rbOptionA.Text = "Option A";
+            this.rbOptionA.UseVisualStyleBackColor = true;
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(9, 156);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(47, 13);
+            this.lblScore.TabIndex = 4;
+            this.lblScore.Text = "Score: 0";
+            // 
+            // btnSubmitAnswer
+            // 
+            this.btnSubmitAnswer.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnSubmitAnswer.Location = new System.Drawing.Point(6, 201);
+            this.btnSubmitAnswer.Name = "btnSubmitAnswer";
+            this.btnSubmitAnswer.Size = new System.Drawing.Size(90, 23);
+            this.btnSubmitAnswer.TabIndex = 3;
+            this.btnSubmitAnswer.Text = "Submit Answer";
+            this.btnSubmitAnswer.UseVisualStyleBackColor = true;
+            this.btnSubmitAnswer.Click += new System.EventHandler(this.btnSubmitAnswer_Click);
+            // 
+            // btnStartQuiz
+            // 
+            this.btnStartQuiz.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnStartQuiz.Location = new System.Drawing.Point(6, 172);
+            this.btnStartQuiz.Name = "btnStartQuiz";
+            this.btnStartQuiz.Size = new System.Drawing.Size(75, 23);
+            this.btnStartQuiz.TabIndex = 2;
+            this.btnStartQuiz.Text = "Start Quiz";
+            this.btnStartQuiz.UseVisualStyleBackColor = true;
+            this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
+            // 
+            // lblQuestion
+            // 
+            this.lblQuestion.AutoSize = true;
+            this.lblQuestion.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblQuestion.Location = new System.Drawing.Point(6, 38);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(126, 13);
+            this.lblQuestion.TabIndex = 0;
+            this.lblQuestion.Text = "Question appears here....";
+            // 
+            // grpLog
+            // 
+            this.grpLog.Controls.Add(this.btnShowLog);
+            this.grpLog.Controls.Add(this.rtbActivityLog);
+            this.grpLog.Location = new System.Drawing.Point(25, 394);
+            this.grpLog.Name = "grpLog";
+            this.grpLog.Size = new System.Drawing.Size(550, 213);
+            this.grpLog.TabIndex = 8;
+            this.grpLog.TabStop = false;
+            this.grpLog.Text = "Activity Log";
+            // 
+            // btnShowLog
+            // 
+            this.btnShowLog.ForeColor = System.Drawing.Color.SteelBlue;
+            this.btnShowLog.Location = new System.Drawing.Point(6, 170);
+            this.btnShowLog.Name = "btnShowLog";
+            this.btnShowLog.Size = new System.Drawing.Size(538, 23);
+            this.btnShowLog.TabIndex = 10;
+            this.btnShowLog.Text = "Show Activity Log";
+            this.btnShowLog.UseVisualStyleBackColor = true;
+            this.btnShowLog.Click += new System.EventHandler(this.btnShowLog_Click);
+            // 
+            // rtbActivityLog
+            // 
+            this.rtbActivityLog.Location = new System.Drawing.Point(6, 19);
+            this.rtbActivityLog.Name = "rtbActivityLog";
+            this.rtbActivityLog.ReadOnly = true;
+            this.rtbActivityLog.Size = new System.Drawing.Size(538, 145);
+            this.rtbActivityLog.TabIndex = 9;
+            this.rtbActivityLog.Text = "";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(6, 22);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 13);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Task Title";
+            // 
+            // txtTaskTitle
+            // 
+            this.txtTaskTitle.Location = new System.Drawing.Point(9, 38);
+            this.txtTaskTitle.Name = "txtTaskTitle";
+            this.txtTaskTitle.Size = new System.Drawing.Size(364, 20);
+            this.txtTaskTitle.TabIndex = 1;
+            // 
+            // grpTasks
+            // 
+            this.grpTasks.Controls.Add(this.txtTaskID);
+            this.grpTasks.Controls.Add(this.label5);
+            this.grpTasks.Controls.Add(this.btnDeleteTask);
+            this.grpTasks.Controls.Add(this.btnCompleteTask);
+            this.grpTasks.Controls.Add(this.btnViewTasks);
+            this.grpTasks.Controls.Add(this.btnAddTask);
+            this.grpTasks.Controls.Add(this.dtpReminder);
+            this.grpTasks.Controls.Add(this.label3);
+            this.grpTasks.Controls.Add(this.txtTaskDescription);
+            this.grpTasks.Controls.Add(this.label2);
+            this.grpTasks.Controls.Add(this.txtTaskTitle);
+            this.grpTasks.Controls.Add(this.label1);
+            this.grpTasks.Location = new System.Drawing.Point(581, 27);
+            this.grpTasks.Name = "grpTasks";
+            this.grpTasks.Size = new System.Drawing.Size(426, 294);
+            this.grpTasks.TabIndex = 6;
+            this.grpTasks.TabStop = false;
+            this.grpTasks.Text = "Task Assistant";
+            // 
+            // txtTaskID
+            // 
+            this.txtTaskID.Location = new System.Drawing.Point(6, 183);
+            this.txtTaskID.Name = "txtTaskID";
+            this.txtTaskID.Size = new System.Drawing.Size(203, 20);
+            this.txtTaskID.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(6, 167);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(42, 13);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "TaskID";
+            // 
+            // btnDeleteTask
+            // 
+            this.btnDeleteTask.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnDeleteTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDeleteTask.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteTask.Location = new System.Drawing.Point(131, 247);
+            this.btnDeleteTask.Name = "btnDeleteTask";
+            this.btnDeleteTask.Size = new System.Drawing.Size(75, 23);
+            this.btnDeleteTask.TabIndex = 9;
+            this.btnDeleteTask.Text = "Delete Task";
+            this.btnDeleteTask.UseVisualStyleBackColor = false;
+            this.btnDeleteTask.Click += new System.EventHandler(this.btnDeleteTask_Click);
+            // 
+            // btnCompleteTask
+            // 
+            this.btnCompleteTask.Location = new System.Drawing.Point(12, 248);
+            this.btnCompleteTask.Name = "btnCompleteTask";
+            this.btnCompleteTask.Size = new System.Drawing.Size(86, 23);
+            this.btnCompleteTask.TabIndex = 8;
+            this.btnCompleteTask.Text = "Complete Task";
+            this.btnCompleteTask.UseVisualStyleBackColor = true;
+            this.btnCompleteTask.Click += new System.EventHandler(this.btnCompleteTask_Click);
+            // 
+            // btnViewTasks
+            // 
+            this.btnViewTasks.Location = new System.Drawing.Point(131, 219);
+            this.btnViewTasks.Name = "btnViewTasks";
+            this.btnViewTasks.Size = new System.Drawing.Size(75, 23);
+            this.btnViewTasks.TabIndex = 7;
+            this.btnViewTasks.Text = "View Tasks";
+            this.btnViewTasks.UseVisualStyleBackColor = true;
+            this.btnViewTasks.Click += new System.EventHandler(this.btnViewTask_Click);
+            // 
+            // btnAddTask
+            // 
+            this.btnAddTask.BackColor = System.Drawing.Color.SteelBlue;
+            this.btnAddTask.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAddTask.ForeColor = System.Drawing.Color.White;
+            this.btnAddTask.Location = new System.Drawing.Point(12, 219);
+            this.btnAddTask.Name = "btnAddTask";
+            this.btnAddTask.Size = new System.Drawing.Size(86, 23);
+            this.btnAddTask.TabIndex = 6;
+            this.btnAddTask.Text = "Add Task";
+            this.btnAddTask.UseVisualStyleBackColor = false;
+            this.btnAddTask.Click += new System.EventHandler(this.btnAddTask_Click);
+            // 
+            // dtpReminder
+            // 
+            this.dtpReminder.Location = new System.Drawing.Point(6, 134);
+            this.dtpReminder.Name = "dtpReminder";
+            this.dtpReminder.Size = new System.Drawing.Size(200, 20);
+            this.dtpReminder.TabIndex = 5;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 118);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(78, 13);
+            this.label3.TabIndex = 4;
+            this.label3.Text = "Reminder Date";
+            // 
+            // txtTaskDescription
+            // 
+            this.txtTaskDescription.Location = new System.Drawing.Point(9, 86);
+            this.txtTaskDescription.Name = "txtTaskDescription";
+            this.txtTaskDescription.Size = new System.Drawing.Size(364, 20);
+            this.txtTaskDescription.TabIndex = 3;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(6, 70);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(60, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Description";
+            // 
+            // Form1
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1184, 661);
+            this.Controls.Add(this.grpLog);
+            this.Controls.Add(this.grpQuiz);
+            this.Controls.Add(this.grpTasks);
+            this.Controls.Add(this.GroupBox1);
+            this.Controls.Add(this.btnSend);
+            this.Controls.Add(this.txtUserInput);
+            this.Controls.Add(this.lblTitle);
+            this.Name = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
+            this.GroupBox1.ResumeLayout(false);
+            this.grpQuiz.ResumeLayout(false);
+            this.grpQuiz.PerformLayout();
+            this.grpLog.ResumeLayout(false);
+            this.grpTasks.ResumeLayout(false);
+            this.grpTasks.PerformLayout();
+            this.ResumeLayout(false);
+            this.PerformLayout();
+
+        }
+
+        #endregion
+
+        private System.Windows.Forms.Label lblTitle;
+        private System.Windows.Forms.TextBox txtUserInput;
+        private System.Windows.Forms.Button btnSend;
+        private System.Windows.Forms.GroupBox GroupBox1;
+        private System.Windows.Forms.GroupBox grpQuiz;
+        private System.Windows.Forms.GroupBox grpLog;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtTaskTitle;
+        private System.Windows.Forms.GroupBox grpTasks;
+        private System.Windows.Forms.DateTimePicker dtpReminder;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtTaskDescription;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnDeleteTask;
+        private System.Windows.Forms.Button btnCompleteTask;
+        private System.Windows.Forms.Button btnViewTasks;
+        private System.Windows.Forms.Button btnAddTask;
+        private System.Windows.Forms.Label lblQuestion;
+        private System.Windows.Forms.RichTextBox rtbActivityLog;
+        private System.Windows.Forms.RichTextBox rtbChat;
+        private System.Windows.Forms.TextBox txtTaskID;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button btnShowLog;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Button btnSubmitAnswer;
+        private System.Windows.Forms.Button btnStartQuiz;
+        private System.Windows.Forms.RadioButton rbOptionD;
+        private System.Windows.Forms.RadioButton rbOptionC;
+        private System.Windows.Forms.RadioButton rbOptionB;
+        private System.Windows.Forms.RadioButton rbOptionA;
+    }
+}
+
