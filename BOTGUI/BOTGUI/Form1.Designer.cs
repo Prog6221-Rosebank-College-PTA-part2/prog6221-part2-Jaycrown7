@@ -68,7 +68,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitle.ForeColor = System.Drawing.Color.SteelBlue;
+            this.lblTitle.ForeColor = System.Drawing.Color.MediumTurquoise;
             this.lblTitle.Location = new System.Drawing.Point(279, 0);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(362, 24);
@@ -81,7 +81,7 @@
             this.txtUserInput.ForeColor = System.Drawing.Color.Black;
             this.txtUserInput.Location = new System.Drawing.Point(12, 327);
             this.txtUserInput.Name = "txtUserInput";
-            this.txtUserInput.Size = new System.Drawing.Size(563, 20);
+            this.txtUserInput.Size = new System.Drawing.Size(557, 20);
             this.txtUserInput.TabIndex = 2;
             // 
             // btnSend
@@ -90,7 +90,7 @@
             this.btnSend.ForeColor = System.Drawing.Color.SteelBlue;
             this.btnSend.Location = new System.Drawing.Point(12, 353);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(563, 23);
+            this.btnSend.Size = new System.Drawing.Size(557, 23);
             this.btnSend.TabIndex = 3;
             this.btnSend.Text = "SEND";
             this.btnSend.UseVisualStyleBackColor = false;
@@ -252,6 +252,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.Color.SteelBlue;
             this.label1.Location = new System.Drawing.Point(6, 22);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
@@ -296,6 +297,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.Color.SteelBlue;
             this.label5.Location = new System.Drawing.Point(6, 167);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(42, 13);
@@ -358,6 +360,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
+            this.label3.ForeColor = System.Drawing.Color.SteelBlue;
             this.label3.Location = new System.Drawing.Point(6, 118);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(78, 13);
@@ -374,6 +377,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
+            this.label2.ForeColor = System.Drawing.Color.SteelBlue;
             this.label2.Location = new System.Drawing.Point(6, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
