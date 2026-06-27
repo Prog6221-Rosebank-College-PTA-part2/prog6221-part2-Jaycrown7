@@ -13,6 +13,10 @@ namespace BOTGUI
         Random random = new Random();
         TaskManager taskManager = new TaskManager();
         ActivityLogger logger = new ActivityLogger();
+        QuizManager quizManager = new QuizManager();
+
+        int currentQuestion = 0;
+        int score = 0;
 
         string favoriteTopic = "";
         string currentTopic = "";
@@ -289,6 +293,26 @@ namespace BOTGUI
 
         }
 
+        private void DisplayQuestion()
+        {
+            QuizQuestion q = quizManager.Questions[currentQuestion];
+
+            lblQuestion.Text = q.Question;
+
+            rbOptionA.Text = q.OptionA;
+            rbOptionB.Text = q.OptionB;
+            rbOptionC.Text = q.OptionC;
+            rbOptionD.Text = q.OptionD;
+
+            rbOptionA.Checked = false;
+            rbOptionB.Checked = false;
+            rbOptionC.Checked = false;
+            rbOptionD.Checked = false;
+
+            rbOptionC.Visible = !string.IsNullOrEmpty(q.OptionC);
+            rbOptionD.Visible = !string.IsNullOrEmpty(q.OptionD);
+        }
+
         private void btnAddTask_Click(object sender, EventArgs e)
         {
             logger.Log("Viewed Tasks");
@@ -401,6 +425,87 @@ namespace BOTGUI
             {
                 rtbActivityLog.AppendText(activity + Environment.NewLine);
             }
+        }
+
+        private void btnStartQuiz_Click(object sender, EventArgs e)
+        {
+            currentQuestion = 0;
+
+            score = 0;
+
+            lblScore.Text = "Score: 0";
+
+            logger.Log("Quiz Started");
+
+            DisplayQuestion();
+        }
+
+        private void btnSubmitAnswer_Click(object sender, EventArgs e)
+        {
+            char answer = ' ';
+
+            if (rbOptionA.Checked)
+                answer = 'A';
+
+            else if (rbOptionB.Checked)
+                answer = 'B';
+
+            else if (rbOptionC.Checked)
+                answer = 'C';
+
+            else if (rbOptionD.Checked)
+                answer = 'D';
+
+            else
+            {
+                MessageBox.Show("Please select an answer.");
+
+                return;
+            }
+
+            QuizQuestion q = quizManager.Questions[currentQuestion];
+
+            if (answer == q.CorrectAnswer)
+            {
+                score++;
+
+                MessageBox.Show("Correct!\n\n" + q.Explanation);
+            }
+            else
+            {
+                MessageBox.Show("Wrong!\n\n" + q.Explanation);
+            }
+
+            currentQuestion++;
+
+            lblScore.Text = "Score: " + score;
+
+            if (currentQuestion >= quizManager.Questions.Count)
+            {
+                logger.Log("Quiz Completed");
+
+                MessageBox.Show(GetFinalMessage());
+
+                lblQuestion.Text = "Quiz Finished!";
+
+                return;
+            }
+
+            DisplayQuestion();
+
+        }
+        private string GetFinalMessage()
+        {
+            if (score >= 10)
+                return "Excellent! You are a cybersecurity expert!\n\nFinal Score: " + score + "/12";
+
+            if (score >= 7)
+                return "Great job! You have good cybersecurity knowledge.\n\nFinal Score: " + score + "/12";
+
+            if (score >= 4)
+                return "Good effort. Keep learning to stay safe online.\n\nFinal Score: " + score + "/12";
+
+            return "You should learn more about cybersecurity. Practice makes perfect!\n\nFinal Score: " + score + "/12";
         }
     }
     

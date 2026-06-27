@@ -34,7 +34,7 @@
             this.GroupBox1 = new System.Windows.Forms.GroupBox();
             this.rtbChat = new System.Windows.Forms.RichTextBox();
             this.grpQuiz = new System.Windows.Forms.GroupBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.lblQuestion = new System.Windows.Forms.Label();
             this.grpLog = new System.Windows.Forms.GroupBox();
             this.rtbActivityLog = new System.Windows.Forms.RichTextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -51,6 +51,13 @@
             this.txtTaskDescription = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btnShowLog = new System.Windows.Forms.Button();
+            this.btnStartQuiz = new System.Windows.Forms.Button();
+            this.btnSubmitAnswer = new System.Windows.Forms.Button();
+            this.lblScore = new System.Windows.Forms.Label();
+            this.rbOptionA = new System.Windows.Forms.RadioButton();
+            this.rbOptionB = new System.Windows.Forms.RadioButton();
+            this.rbOptionC = new System.Windows.Forms.RadioButton();
+            this.rbOptionD = new System.Windows.Forms.RadioButton();
             this.GroupBox1.SuspendLayout();
             this.grpQuiz.SuspendLayout();
             this.grpLog.SuspendLayout();
@@ -111,22 +118,29 @@
             // 
             // grpQuiz
             // 
-            this.grpQuiz.Controls.Add(this.label4);
+            this.grpQuiz.Controls.Add(this.rbOptionD);
+            this.grpQuiz.Controls.Add(this.rbOptionC);
+            this.grpQuiz.Controls.Add(this.rbOptionB);
+            this.grpQuiz.Controls.Add(this.rbOptionA);
+            this.grpQuiz.Controls.Add(this.lblScore);
+            this.grpQuiz.Controls.Add(this.btnSubmitAnswer);
+            this.grpQuiz.Controls.Add(this.btnStartQuiz);
+            this.grpQuiz.Controls.Add(this.lblQuestion);
             this.grpQuiz.Location = new System.Drawing.Point(581, 327);
             this.grpQuiz.Name = "grpQuiz";
-            this.grpQuiz.Size = new System.Drawing.Size(426, 117);
+            this.grpQuiz.Size = new System.Drawing.Size(426, 280);
             this.grpQuiz.TabIndex = 7;
             this.grpQuiz.TabStop = false;
             this.grpQuiz.Text = "Cybersecurity Quiz";
             // 
-            // label4
+            // lblQuestion
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(6, 16);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(49, 13);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Question";
+            this.lblQuestion.AutoSize = true;
+            this.lblQuestion.Location = new System.Drawing.Point(6, 38);
+            this.lblQuestion.Name = "lblQuestion";
+            this.lblQuestion.Size = new System.Drawing.Size(126, 13);
+            this.lblQuestion.TabIndex = 0;
+            this.lblQuestion.Text = "Question appears here....";
             // 
             // grpLog
             // 
@@ -134,7 +148,7 @@
             this.grpLog.Controls.Add(this.rtbActivityLog);
             this.grpLog.Location = new System.Drawing.Point(25, 452);
             this.grpLog.Name = "grpLog";
-            this.grpLog.Size = new System.Drawing.Size(982, 155);
+            this.grpLog.Size = new System.Drawing.Size(550, 155);
             this.grpLog.TabIndex = 8;
             this.grpLog.TabStop = false;
             this.grpLog.Text = "Activity Log";
@@ -286,6 +300,79 @@
             this.btnShowLog.UseVisualStyleBackColor = true;
             this.btnShowLog.Click += new System.EventHandler(this.btnShowLog_Click);
             // 
+            // btnStartQuiz
+            // 
+            this.btnStartQuiz.Location = new System.Drawing.Point(6, 172);
+            this.btnStartQuiz.Name = "btnStartQuiz";
+            this.btnStartQuiz.Size = new System.Drawing.Size(75, 23);
+            this.btnStartQuiz.TabIndex = 2;
+            this.btnStartQuiz.Text = "Start Quiz";
+            this.btnStartQuiz.UseVisualStyleBackColor = true;
+            this.btnStartQuiz.Click += new System.EventHandler(this.btnStartQuiz_Click);
+            // 
+            // btnSubmitAnswer
+            // 
+            this.btnSubmitAnswer.Location = new System.Drawing.Point(6, 201);
+            this.btnSubmitAnswer.Name = "btnSubmitAnswer";
+            this.btnSubmitAnswer.Size = new System.Drawing.Size(90, 23);
+            this.btnSubmitAnswer.TabIndex = 3;
+            this.btnSubmitAnswer.Text = "Submit Answer";
+            this.btnSubmitAnswer.UseVisualStyleBackColor = true;
+            this.btnSubmitAnswer.Click += new System.EventHandler(this.btnSubmitAnswer_Click);
+            // 
+            // lblScore
+            // 
+            this.lblScore.AutoSize = true;
+            this.lblScore.Location = new System.Drawing.Point(9, 156);
+            this.lblScore.Name = "lblScore";
+            this.lblScore.Size = new System.Drawing.Size(47, 13);
+            this.lblScore.TabIndex = 4;
+            this.lblScore.Text = "Score: 0";
+            // 
+            // rbOptionA
+            // 
+            this.rbOptionA.AutoSize = true;
+            this.rbOptionA.Location = new System.Drawing.Point(9, 54);
+            this.rbOptionA.Name = "rbOptionA";
+            this.rbOptionA.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionA.TabIndex = 5;
+            this.rbOptionA.TabStop = true;
+            this.rbOptionA.Text = "Option A";
+            this.rbOptionA.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionB
+            // 
+            this.rbOptionB.AutoSize = true;
+            this.rbOptionB.Location = new System.Drawing.Point(9, 77);
+            this.rbOptionB.Name = "rbOptionB";
+            this.rbOptionB.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionB.TabIndex = 6;
+            this.rbOptionB.TabStop = true;
+            this.rbOptionB.Text = "Option B";
+            this.rbOptionB.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionC
+            // 
+            this.rbOptionC.AutoSize = true;
+            this.rbOptionC.Location = new System.Drawing.Point(9, 100);
+            this.rbOptionC.Name = "rbOptionC";
+            this.rbOptionC.Size = new System.Drawing.Size(66, 17);
+            this.rbOptionC.TabIndex = 7;
+            this.rbOptionC.TabStop = true;
+            this.rbOptionC.Text = "Option C";
+            this.rbOptionC.UseVisualStyleBackColor = true;
+            // 
+            // rbOptionD
+            // 
+            this.rbOptionD.AutoSize = true;
+            this.rbOptionD.Location = new System.Drawing.Point(9, 125);
+            this.rbOptionD.Name = "rbOptionD";
+            this.rbOptionD.Size = new System.Drawing.Size(67, 17);
+            this.rbOptionD.TabIndex = 8;
+            this.rbOptionD.TabStop = true;
+            this.rbOptionD.Text = "Option D";
+            this.rbOptionD.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,12 +417,19 @@
         private System.Windows.Forms.Button btnCompleteTask;
         private System.Windows.Forms.Button btnViewTask;
         private System.Windows.Forms.Button btnAddTask;
-        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label lblQuestion;
         private System.Windows.Forms.RichTextBox rtbActivityLog;
         private System.Windows.Forms.RichTextBox rtbChat;
         private System.Windows.Forms.TextBox txtTaskID;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnShowLog;
+        private System.Windows.Forms.Label lblScore;
+        private System.Windows.Forms.Button btnSubmitAnswer;
+        private System.Windows.Forms.Button btnStartQuiz;
+        private System.Windows.Forms.RadioButton rbOptionD;
+        private System.Windows.Forms.RadioButton rbOptionC;
+        private System.Windows.Forms.RadioButton rbOptionB;
+        private System.Windows.Forms.RadioButton rbOptionA;
     }
 }
 

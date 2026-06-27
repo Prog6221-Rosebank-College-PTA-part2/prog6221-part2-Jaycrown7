@@ -101,11 +101,13 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\QuizQuestion.cs" />
     <Compile Include="Models\TaskItem.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ActivityLogger.cs" />
     <Compile Include="Services\Database.cs" />
+    <Compile Include="Services\QuizManager.cs" />
     <Compile Include="Services\TaskManager.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
